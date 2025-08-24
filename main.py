@@ -23,7 +23,6 @@ class MyServer(BaseHTTPRequestHandler):
             self.end_headers()
             with open(file_name, "r", encoding="utf-8") as f:
                 self.wfile.write(bytes(f.read(), "utf-8"))
-
         else:
             self.send_response(404)
             self.send_header("Content-type", "text/html; charset=utf-8")
